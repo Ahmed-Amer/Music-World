@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <!--IE Compatibility-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- add the responsive viewport meta tag [first mobile meta]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+	<title>Music World</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:200,400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <script>
+       
+        
+      var counter = 0;
+        
+      function play() {
+        var audio_array = ['./audio/05.mp3','./audio/02.mp3','./audio/03.mp3','./audio/04.mp3','./audio/06.mp3','./audio/01.mp3','./audio/07.mp3']
+        var audio = document.getElementById("audio");
+        var strong =  document.getElementById("strong");
+        strong.textContent = "Play Next";
+        audio.setAttribute('src',audio_array[counter]);  
+        audio.play();
+        counter = counter + 1;
+        if(counter > 6){
+            counter = 0;
+        }  
+      }
+        
+     function stop()
+        {
+          var audio = document.getElementById("audio");
+           audio.pause(); 
+        }
+           
+        
+    </script>
+</head>
+<body>
+    <h1>Move Around Music World</h1>
+    
+    <div class="content">
+        <a class="button" href="#" onclick="play()">
+         <span></span>
+         <span></span>
+         <span></span>
+         <span></span>
+         <strong id="strong">Play</strong>
+        </a>
+        
+        <a class="button" href="#" onclick="stop()">
+         <span></span>
+         <span></span>
+         <span></span>
+         <span></span>
+         <strong>Stop</strong>
+        </a>
+        
+        <audio id="audio" src=""></audio>
+    </div>
+    
+    <div class="footer">
+       Made with love by <a href="https://ahmed-portfolio.000webhostapp.com/">Ahmed Amer</a>
+    </div>
+       
+</body>
+
+</html>
